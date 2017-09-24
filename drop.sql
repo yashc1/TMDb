@@ -1,0 +1,11 @@
+drop table TV_Series;
+drop table Movies;
+drop table Person;
+drop table Celebrity;
+drop table PerformsIn;
+drop table Studio;
+drop table Media;
+drop table Role;
+drop table Produces;
+drop table Users;
+drop table Rates;

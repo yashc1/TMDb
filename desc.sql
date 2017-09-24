@@ -1,0 +1,10 @@
+desc Studio;
+desc Media
+desc Person
+desc Celebrity
+desc PerformsIn
+desc Movies
+desc TV_Series
+desc Produces
+desc Users
+desc Rates
