@@ -20,10 +20,10 @@ select me.title,me.rating from movies mo,tv_series t order by me.rating where me
 select  from media me, movies mo, produces p, studio s where me.mediaid = mo.mediaid and me.mediaid = p.mediaid and p.studioid = s.studioid group by studio_name
 
 --8. query to show names of users with the review they gave about a media
-select p.name,r.stars,r.comments from person p,rates r,users u where p.personid = u.personid and u.username = r.username
+select p.name, me.title,r.stars, r.comments from person p,rates r,users u,media me where p.personid = u.personid and u.username = r.username and me.mediaid = r.mediaid
 
 --9. query to show list of movies that havent been rated
-select me.*,mo.summary, mo.length, mo.certification from media me, movies mo where me.mediaid = mo.mediaid where me.mediaid not in (select mediaid from rates)
+select me.*,mo.summary, mo.length, mo.certification from media me, movies mo where me.mediaid = mo.mediaid and me.mediaid not in (select mediaid from rates)
 
 --10. query to show the list of tv series that are ongoing
 select m.*,tv.No_of_Season,tv.Certification,tv.Summary from media m, tv_series tv where tv.mediaid = m.mediaid and ongoing = 1
