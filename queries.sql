@@ -17,7 +17,7 @@ select me.title,me.rating from movies mo,media me  where me.mediaid = mo.mediaid
 select me.title,me.rating from tv_series t,media me where me.mediaid = t.mediaid order by me.rating desc
 
 --7. query to show list of movies grouped by The studio which produced them.
-select  from media me, movies mo, produces p, studio s where me.mediaid = mo.mediaid and me.mediaid = p.mediaid and p.studioid = s.studioid group by studio_name
+Select me.title,s.studio_name  from media me, movies mo, produces p, studio s where me.mediaid = mo.mediaid and me.mediaid = p.mediaid and p.studioid = s.studioid order by studio_name
 
 --8. query to show names of users with the review they gave about a media
 select p.name, me.title,r.stars, r.comments from person p,rates r,users u,media me where p.personid = u.personid and u.username = r.username and me.mediaid = r.mediaid
