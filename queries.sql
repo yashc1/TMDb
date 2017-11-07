@@ -11,7 +11,7 @@ select p.*,c.description, c.height, c.nationality from person p, celebrity c whe
 select p.*,u.username,u.password from person p, users u where p.personid = u.personid
 
 --5.query to show movies with highest rating first
-select me.title,me.rating from movies mo,media me order by me.rating where me.mediaid = mo.mediaid 
+select me.title,me.rating from movies mo,media me  where me.mediaid = mo.mediaid order by me.rating desc 
 
 --6.query to show tv series with highest rating first
 select me.title,me.rating from movies mo,tv_series t order by me.rating where me.mediaid = t.mediaid
