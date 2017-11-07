@@ -14,7 +14,7 @@ select p.*,u.username,u.password from person p, users u where p.personid = u.per
 select me.title,me.rating from movies mo,media me  where me.mediaid = mo.mediaid order by me.rating desc 
 
 --6.query to show tv series with highest rating first
-select me.title,me.rating from movies mo,tv_series t order by me.rating where me.mediaid = t.mediaid
+select me.title,me.rating from tv_series t,media me where me.mediaid = t.mediaid order by me.rating desc
 
 --7. query to show list of movies grouped by The studio which produced them.
 select  from media me, movies mo, produces p, studio s where me.mediaid = mo.mediaid and me.mediaid = p.mediaid and p.studioid = s.studioid group by studio_name
